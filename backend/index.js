@@ -2,9 +2,11 @@ const express = require("express")
 const { createTodo, updateTodo } = require("./types_zod");
 const { Todo } = require("./db");
 const { title } = require("process");
+const cors = require("cors")
 
 const app = express()
 const port = 3000;
+app.use(cors())
 
 app.use(express.json())
 
