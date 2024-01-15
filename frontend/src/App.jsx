@@ -8,13 +8,16 @@ function App() {
   const [todos, setTodos] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:3000/todos")
-      .then((res) => {
-        return res.json()
-      })
-      .then((data) => {
-        return setTodos(data.todos)
-      })
+
+    setTimeout(() => {
+      fetch("http://localhost:3000/todos")
+        .then((res) => {
+          return res.json()
+        })
+        .then((data) => {
+          return setTodos(data.todos)
+        })
+    }, 5000);
   }, [])
 
 
